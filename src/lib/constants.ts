@@ -1,6 +1,6 @@
 /** Application-wide constants */
 
-export const SITE_NAME = 'Q-Fiscal System';
+export const SITE_NAME = 'V-Budget System';
 export const SITE_DESCRIPTION = 'Hệ thống Dự báo & Tối ưu Thu Ngân sách Nhà nước sử dụng AI & Lượng tử.';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 

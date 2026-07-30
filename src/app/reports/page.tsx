@@ -25,7 +25,7 @@ const reports = [
     type: "Hàng quý",
     status: "Hoàn thành",
     summary: "Tổng thu Q1: 545 nghìn tỷ VND (vượt dự toán 8%). Mô hình AI dự báo sát thực tế hơn 18% so với ARIMA.",
-    highlights: ["Q-Fiscal vượt ARIMA 18% về độ chính xác", "PhoBERT phân tích 35,000 bài báo", "3 cảnh báo sớm chính xác"],
+    highlights: ["V-Budget vượt ARIMA 18% về độ chính xác", "PhoBERT phân tích 35,000 bài báo", "3 cảnh báo sớm chính xác"],
   },
 ];
 

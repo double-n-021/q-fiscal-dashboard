@@ -39,7 +39,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           
           <div className="flex md:hidden items-center ml-2 gap-2 text-slate-800 dark:text-white">
             <Hexagon className="w-5 h-5 text-blue-600" />
-            <span className="font-bold">Q-Fiscal</span>
+            <span className="font-bold">V-Budget</span>
           </div>
 
           <div className="hidden md:flex items-center">

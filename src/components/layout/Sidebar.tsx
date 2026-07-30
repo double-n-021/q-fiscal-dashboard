@@ -59,7 +59,7 @@ export function Sidebar() {
           </div>
           {!isCollapsed && (
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-slate-400">
-              Q-Fiscal
+              V-Budget
             </h1>
           )}
         </Link>

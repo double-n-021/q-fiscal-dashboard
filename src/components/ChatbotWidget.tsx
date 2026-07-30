@@ -15,7 +15,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: 1,
     role: 'bot',
-    text: 'Xin chào! Tôi là Q-Fiscal AI Assistant 🤖\n\nTôi có thể giúp bạn:\n• Phân tích dữ liệu ngân sách\n• Giải thích kết quả dự báo SHAP\n• Tìm hiểu xu hướng Sentiment báo chí\n• Trả lời câu hỏi về mô hình AI\n\nBạn cần hỗ trợ gì?',
+    text: 'Xin chào! Tôi là V-Budget AI Assistant 🤖\n\nTôi có thể giúp bạn:\n• Phân tích dữ liệu ngân sách\n• Giải thích kết quả dự báo SHAP\n• Tìm hiểu xu hướng Sentiment báo chí\n• Trả lời câu hỏi về mô hình AI\n\nBạn cần hỗ trợ gì?',
     time: 'Bây giờ',
   },
 ];
@@ -26,7 +26,7 @@ const PRESET_RESPONSES: Record<string, string> = {
   'shap': '**SHAP Force Plot — Giải thích Dự báo Tháng 7/2026:**\n\n🔴 Đẩy dự báo GIẢM:\n• Tỷ giá USD/VND tăng 2.3% → -15 nghìn tỷ\n• CPI tăng 4.1% → -8 nghìn tỷ\n\n🟢 Đẩy dự báo TĂNG:\n• GDP Q2 đạt 6.8% → +52 nghìn tỷ\n• FDI tăng 12% → +18 nghìn tỷ\n• Sentiment NLP +0.65 → +8 nghìn tỷ\n\n📌 Kết luận: Dự báo thu tổng cộng **TĂNG** nhờ GDP và FDI bù đắp được rủi ro tỷ giá.',
   'quantum': '**Quantum Feature Selection** sử dụng PennyLane VQC:\n\n🔬 **Quy trình:**\n1. Mã hóa 30+ biến vĩ mô vào Quantum Circuit\n2. VQC tối ưu bộ trọng số qua gradient descent\n3. Đầu ra: Top 10 biến quan trọng nhất\n\n⚛️ **Kết quả:** Giảm từ 32 biến → 10 biến tối ưu\n• Accuracy tăng 3.2% so PCA cổ điển\n• Training time giảm 45%\n\n💡 Chạy trên Quantum Simulator (CPU), không cần hardware lượng tử.',
   'what-if': 'Tính năng **What-if Analysis** cho phép bạn:\n\n🎛️ Kéo thanh trượt 6 biến vĩ mô:\n• Tăng trưởng GDP (4.0% — 8.0%)\n• Giá dầu Brent ($60 — $120)\n• Lãi suất điều hành (3.0% — 7.0%)\n• CPI (2.0% — 6.0%)\n• Tỷ giá USD/VND (24,000 — 26,000)\n• FDI (tỷ USD)\n\n📈 Biểu đồ dự báo cập nhật **real-time** khi bạn thay đổi bất kỳ biến nào!',
-  'mô hình': 'Q-Fiscal sử dụng kiến trúc **3 lớp AI:**\n\n**Lớp 1 — NLP (PhoBERT):**\n• Crawl 100k+ bài báo kinh tế tiếng Việt\n• Fine-tune trên tập UIT-VSFC\n• Đầu ra: Sentiment Score (-1 đến +1)\n\n**Lớp 2 — Quantum (PennyLane VQC):**\n• Lọc đặc trưng tối ưu từ 30+ biến\n• Giảm nhiễu đa cộng tuyến\n\n**Lớp 3 — Core ML (XGBoost + SHAP):**\n• Dự báo Thu NSNN theo tháng/quý\n• SHAP giải thích biến nào tác động\n• Walk-forward validation, MAPE < 5%',
+  'mô hình': 'V-Budget sử dụng kiến trúc **3 lớp AI:**\n\n**Lớp 1 — NLP (PhoBERT):**\n• Crawl 100k+ bài báo kinh tế tiếng Việt\n• Fine-tune trên tập UIT-VSFC\n• Đầu ra: Sentiment Score (-1 đến +1)\n\n**Lớp 2 — Quantum (PennyLane VQC):**\n• Lọc đặc trưng tối ưu từ 30+ biến\n• Giảm nhiễu đa cộng tuyến\n\n**Lớp 3 — Core ML (XGBoost + SHAP):**\n• Dự báo Thu NSNN theo tháng/quý\n• SHAP giải thích biến nào tác động\n• Walk-forward validation, MAPE < 5%',
 };
 
 function getResponse(input: string): string {
@@ -37,7 +37,7 @@ function getResponse(input: string): string {
   }
   
   if (lower.includes('xin chào') || lower.includes('hello') || lower.includes('hi')) {
-    return 'Chào bạn! 👋 Tôi là AI Assistant của Q-Fiscal. Bạn có thể hỏi tôi về:\n• **Dự báo** ngân sách\n• **Sentiment** báo chí\n• **SHAP** giải thích mô hình\n• **Quantum** feature selection\n• **What-if** analysis\n• **Mô hình** AI đang dùng';
+    return 'Chào bạn! 👋 Tôi là AI Assistant của V-Budget. Bạn có thể hỏi tôi về:\n• **Dự báo** ngân sách\n• **Sentiment** báo chí\n• **SHAP** giải thích mô hình\n• **Quantum** feature selection\n• **What-if** analysis\n• **Mô hình** AI đang dùng';
   }
   
   if (lower.includes('cảm ơn') || lower.includes('thanks')) {
@@ -117,7 +117,7 @@ export function ChatbotWidget() {
               <Sparkles className="w-5 h-5" />
             </div>
             <div className="flex-1">
-              <h3 className="font-bold text-sm">Q-Fiscal AI Assistant</h3>
+              <h3 className="font-bold text-sm">V-Budget AI Assistant</h3>
               <p className="text-xs text-blue-100">Phân tích ngân sách thông minh</p>
             </div>
             <span className="flex items-center gap-1.5 text-xs bg-white/20 px-2 py-1 rounded-full">
