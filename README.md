@@ -59,8 +59,10 @@ npm run start
 
 ## Đội ngũ phát triển (Monolog Team)
 
-- **Lê Thị Như Trang** (Đội trưởng) - Đại học Kinh tế TP.HCM
-- **Nguyễn Ngọc Hà** - Đại học Kinh tế TP.HCM
-- **Nguyễn Minh Mẫn** - Đại học Kinh tế TP.HCM
-- **Bùi Đặng Nhật Nguyên** - Đại học CNTT - ĐHQG-HCM
-- **Trương Thành Tài** - Đại học CNTT - ĐHQG-HCM
+| STT | Họ tên | Vai trò | Trường / Đơn vị |
+| :---: | :--- | :---: | :--- |
+| 1 | **Lê Thị Như Trang** | Đội trưởng | Đại học Kinh tế TP.HCM |
+| 2 | **Nguyễn Ngọc Hà** | Thành viên | Đại học Kinh tế TP.HCM |
+| 3 | **Nguyễn Minh Mẫn** | Thành viên | Đại học Kinh tế TP.HCM |
+| 4 | **Bùi Đặng Nhật Nguyên** | Thành viên | Trường Đại học Công nghệ Thông tin - ĐHQG-HCM |
+| 5 | **Trương Thành Tài** | Thành viên | Trường Đại học Công nghệ Thông tin - ĐHQG-HCM |
