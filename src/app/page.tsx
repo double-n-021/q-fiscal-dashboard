@@ -1,6 +1,8 @@
 import { BudgetChart } from '@/components/BudgetChart';
 import { SentimentWidget } from '@/components/SentimentWidget';
-import { BarChart3, TrendingUp, DollarSign, Activity } from 'lucide-react';
+import { ShapChart } from '@/components/ShapChart';
+import { QuantumFeatureWidget } from '@/components/QuantumFeatureWidget';
+import { BarChart3, TrendingUp, DollarSign, Activity, Target, Atom } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -25,8 +27,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* KPIs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* KPIs - Added MAPE */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
           <KpiCard 
             title="Dự báo Tổng thu YTD" 
             value="2,150 Nghìn Tỷ" 
@@ -35,15 +37,23 @@ export default function Home() {
             color="blue"
           />
           <KpiCard 
-            title="Sai số dự báo (RMSE)" 
-            value="1.2%" 
-            trend="-0.5%" 
-            trendDownIsGood
-            icon={<Activity className="w-6 h-6 text-emerald-600" />}
+            title="Sai số MAPE" 
+            value="3.8%" 
+            trend="Mục tiêu: <5%" 
+            neutral
+            icon={<Target className="w-6 h-6 text-emerald-600" />}
             color="emerald"
           />
           <KpiCard 
-            title="Tăng trưởng GDP (Mô phỏng)" 
+            title="Sai số RMSE" 
+            value="1.2%" 
+            trend="-0.5%" 
+            trendDownIsGood
+            icon={<Activity className="w-6 h-6 text-cyan-600" />}
+            color="cyan"
+          />
+          <KpiCard 
+            title="Tăng trưởng GDP" 
             value="6.5%" 
             trend="Giữ nguyên"
             neutral
@@ -51,7 +61,7 @@ export default function Home() {
             color="violet"
           />
           <KpiCard 
-            title="Số bài báo đã phân tích" 
+            title="Bài báo đã phân tích" 
             value="124,500+" 
             trend="Hôm nay: +450"
             neutral
@@ -60,7 +70,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Main Content Grid */}
+        {/* What-if Analysis + Sentiment */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6 bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
             <div>
@@ -79,6 +89,12 @@ export default function Home() {
           </div>
         </div>
 
+        {/* SHAP Charts */}
+        <ShapChart />
+
+        {/* Quantum Feature Selection */}
+        <QuantumFeatureWidget />
+
       </div>
     </div>
   );
@@ -88,6 +104,7 @@ function KpiCard({ title, value, trend, icon, color, trendDownIsGood = false, ne
   const bgColors: Record<string, string> = {
     blue: 'bg-blue-50 dark:bg-blue-900/20',
     emerald: 'bg-emerald-50 dark:bg-emerald-900/20',
+    cyan: 'bg-cyan-50 dark:bg-cyan-900/20',
     violet: 'bg-violet-50 dark:bg-violet-900/20',
     amber: 'bg-amber-50 dark:bg-amber-900/20',
   };
@@ -99,7 +116,7 @@ function KpiCard({ title, value, trend, icon, color, trendDownIsGood = false, ne
       : trend.startsWith('+') ? 'text-emerald-600' : 'text-rose-600';
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-start justify-between">
+    <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-start justify-between">
       <div>
         <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{title}</p>
         <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-2">{value}</h3>
