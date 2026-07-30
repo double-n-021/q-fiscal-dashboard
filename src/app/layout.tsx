@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { QueryProvider } from '@/providers/query-provider';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
+import { ChatbotWidget } from '@/components/ChatbotWidget';
 import { siteConfig } from '@/config/site';
 
 import './globals.css';
@@ -65,6 +66,7 @@ export default function RootLayout({
             <DashboardLayout>
               {children}
             </DashboardLayout>
+            <ChatbotWidget />
             <Toaster position="bottom-right" richColors closeButton />
           </QueryProvider>
         </ThemeProvider>
